@@ -1,0 +1,340 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f5;  /* Light background color */
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+}
+
+.theme-toggle-btn {
+    padding: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Add Task Form */
+.task-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.task-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Task List */
+.task-list-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.task:hover {
+    transform: translateY(-5px);
+}
+
+.task-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.task-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.task-priority {
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.task-status {
+    font-weight: bold;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+
+/* Priority Colors */
+.task-priority.Low {
+    background-color: #d3ffd3;
+}
+
+.task-priority.Medium {
+    background-color: #fff1b3;
+}
+
+.task-priority.High {
+    background-color: #ffb3b3;
+}
+
+/* Notes */
+.task-notes {
+    font-style: italic;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.complete-btn,
+.delete-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.complete-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.complete-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn:hover {
+    background-color: #e44b1d;
+}
+
+/* Status - Complete: Green Color */
+.task[data-status="Completed"] {
+    background-color: #d4edda;  /* Light green background */
+    color: #155724;  /* Dark green text color */
+}
+
+.task[data-status="Completed"] .task-status {
+    background-color: #28a745;  /* Green background for status */
+    color: white;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark-mode .task {
+    background-color: #444;
+}
+
+body.dark-mode header {
+    background-color: #222;
+}
+
+body.dark-mode .theme-toggle-btn {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .task-status {
+    background-color: #555;
+}
+
+body.dark-mode .complete-btn {
+    background-color: #3a9637;
+}
+
+body.dark-mode .delete-btn {
+    background-color: #c53929;
+}
+
+body.dark-mode .task-notes {
+    color: #bbb;
+}
+
+/* General title styles */
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333; /* Default color for light mode */
+    margin: 0;
+    transition: color 0.3s; /* Smooth transition for dark mode */
+}
+
+/* Title style for dark mode */
+body.dark-mode header h1 {
+    color: #fff; /* Ensure visibility in dark mode */
+}
+
+/* Other dark mode adjustments */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .theme-toggle-btn {
+    color: #fff;
+}
+/* Add Task Form */
+.task-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .task-form {
+    background-color: #444; /* Dark background for form */
+    color: #e0e0e0; /* Light text for visibility */
+}
+
+/* Form Fields */
+form input,
+form select,
+form textarea,
+form button {
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    color: #333; /* Default text color */
+    background-color: #fff; /* Default background */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode form input,
+body.dark-mode form select,
+body.dark-mode form textarea {
+    background-color: #555; /* Darker background for input fields */
+    color: #e0e0e0; /* Light text color */
+    border-color: #666; /* Adjusted border color for visibility */
+}
+
+/* Form Button */
+form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+body.dark-mode form button {
+    background-color: #3a9637;
+}
+
+/* Priority Colors */
+.task-priority.Low {
+    background-color: #d3ffd3;
+}
+
+.task-priority.Medium {
+    background-color: #fff1b3;
+}
+
+.task-priority.High {
+    background-color: #ffb3b3;
+}
+
+/* Dark Mode Priority Colors */
+body.dark-mode .task-priority.Low {
+    background-color: #4c9f4d; 
+    color: #fff;  
+}
+
+body.dark-mode .task-priority.Medium {
+    background-color: #c6a800;  
+    color: #fff; 
+}
+
+body.dark-mode .task-priority.High {
+    background-color: #b24d4d;  
+    color: #fff;  
+}
